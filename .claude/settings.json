@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"/mnt/user-data/uploads/\" 2>&1; echo \"---\"; ls -la \"c:/Users/eduar/freelances/vini-masc\" 2>&1)",
+      "Read(//mnt/user-data/**)",
+      "Read(//c/Users/eduar/**)",
+      "Bash(cp \"/c/Users/eduar/freelances/vini-masc/img/Captura de tela 2026-07-10 233510.png\" \"/c/Users/eduar/freelances/vini-masc/img/vinicius-hero.png\" && ls -la \"/c/Users/eduar/freelances/vini-masc/img/\")",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(chromium-cli --help)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\eduar\\freelances\\vini-masc\\img"
+    ]
+  }
+}

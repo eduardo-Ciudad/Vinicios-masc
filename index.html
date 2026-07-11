@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinicius Mascagni — Personal Trainer | Consultoria Online de Treino e Dieta</title>
+<meta name="description" content="Transforme seu corpo com acompanhamento profissional 100% online. Treino e dieta personalizados, ajustados à sua rotina, com suporte direto no WhatsApp.">
+<meta name="theme-color" content="#0a0a0a">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vinicius Mascagni — Consultoria Online de Treino e Dieta">
+<meta property="og:description" content="Treino e dieta sob medida, acompanhamento próximo e resultados reais. 100% online, de qualquer lugar.">
+<meta property="og:image" content="img/vinicius-hero.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%AA%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+<style>
+  :root{
+    --bg: #0a0a0a;
+    --bg-alt: #121212;
+    --surface: #181818;
+    --surface-2: #1f1f1f;
+    --border: rgba(255,255,255,0.08);
+    --text: #f2efe9;
+    --text-dim: #a8a49c;
+    --text-faint: #726e67;
+    --gold: #e8b13f;
+    --gold-bright: #ffd166;
+    --gold-deep: #b9832a;
+    --shadow-gold: rgba(232,177,63,0.25);
+    --wa: #25d366;
+    --radius: 18px;
+    --maxw: 1180px;
+    --ff-display: 'Anton', sans-serif;
+    --ff-body: 'Manrope', sans-serif;
+    --ff-script: 'Caveat', cursive;
+  }
+
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; scroll-padding-top:84px; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:var(--ff-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{ max-width:100%; display:block; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ margin:0; padding:0; list-style:none; }
+  h1,h2,h3{ margin:0; font-family:var(--ff-display); font-weight:400; letter-spacing:0.5px; }
+  p{ margin:0; }
+  .container{ max-width:var(--maxw); margin:0 auto; padding:0 22px; }
+
+  ::selection{ background:var(--gold); color:#141414; }
+
+  :focus-visible{ outline:2px solid var(--gold); outline-offset:3px; }
+
+  .noise{ position:relative; isolation:isolate; }
+  .noise::after{
+    content:"";
+    position:absolute; inset:0;
+    pointer-events:none;
+    z-index:1;
+    opacity:0.05;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:12.5px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+    color:var(--gold);
+  }
+  .eyebrow::before{ content:""; width:22px; height:2px; background:var(--gold); display:inline-block; }
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:17px 30px; border-radius:100px;
+    font-family:var(--ff-body); font-weight:800; font-size:15.5px; letter-spacing:0.3px;
+    cursor:pointer; border:none; transition:transform .25s cubic-bezier(.2,.8,.2,1), box-shadow .25s ease, background .25s ease;
+    white-space:nowrap;
+  }
+  .btn i{ font-size:19px; }
+  .btn-primary{
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+    color:#181000;
+    box-shadow:0 10px 30px -8px var(--shadow-gold);
+  }
+  .btn-primary:hover{ transform:translateY(-3px); box-shadow:0 16px 36px -8px var(--shadow-gold); }
+  .btn-primary:active{ transform:translateY(-1px); }
+  .btn-ghost{
+    background:transparent; color:var(--text); border:1.5px solid var(--border);
+  }
+  .btn-ghost:hover{ border-color:var(--gold); color:var(--gold); }
+  .btn-block{ width:100%; }
+
+  /* ---------- reveal ---------- */
+  .reveal{ opacity:0; transform:translateY(28px); transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1); }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+  .reveal-delay-1.in-view{ transition-delay:.1s; }
+  .reveal-delay-2.in-view{ transition-delay:.2s; }
+  .reveal-delay-3.in-view{ transition-delay:.3s; }
+  .reveal-delay-4.in-view{ transition-delay:.4s; }
+
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation:none !important; transition:none !important; }
+    .reveal{ opacity:1; transform:none; }
+  }
+
+  /* ---------- Navbar ---------- */
+  .navbar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    padding:18px 0;
+    transition:background .35s ease, padding .35s ease, box-shadow .35s ease, border-color .35s ease;
+    border-bottom:1px solid transparent;
+  }
+  .navbar.scrolled{
+    background:rgba(10,10,10,0.82);
+    backdrop-filter:blur(14px) saturate(140%);
+    -webkit-backdrop-filter:blur(14px) saturate(140%);
+    padding:12px 0;
+    border-color:var(--border);
+    box-shadow:0 8px 30px -12px rgba(0,0,0,0.6);
+  }
+  .nav-inner{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+  .logo{ display:flex; align-items:center; gap:10px; font-family:var(--ff-display); font-size:19px; letter-spacing:1px; }
+  .logo .dot{ color:var(--gold); }
+  .nav-links{ display:none; align-items:center; gap:34px; font-size:14.5px; font-weight:600; color:var(--text-dim); }
+  .nav-links a{ transition:color .2s ease; position:relative; }
+  .nav-links a:hover{ color:var(--text); }
+  .nav-cta{ display:none; }
+  .nav-wa-icon{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:42px; height:42px; border-radius:50%;
+    background:var(--surface-2); border:1px solid var(--border); color:var(--gold);
+    font-size:18px; transition:background .2s ease, transform .2s ease;
+  }
+  .nav-wa-icon:hover{ background:var(--gold); color:#181000; transform:scale(1.06); }
+
+  @media(min-width:960px){
+    .nav-links{ display:flex; }
+    .nav-cta{ display:inline-flex; }
+    .nav-wa-icon{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:120px 0 0;
+    background:
+      radial-gradient(ellipse 900px 500px at 85% -10%, rgba(232,177,63,0.16), transparent 60%),
+      radial-gradient(ellipse 700px 500px at 0% 20%, rgba(232,177,63,0.08), transparent 60%),
+      var(--bg);
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid; grid-template-columns:1fr; gap:36px;
+    align-items:center;
+  }
+  .hero-content{ position:relative; z-index:2; text-align:center; }
+  .hero-content .eyebrow{ justify-content:center; }
+  .hero h1{
+    margin-top:18px;
+    font-size:clamp(2.5rem, 9vw, 3.2rem);
+    line-height:1.04;
+    text-transform:uppercase;
+  }
+  .hero h1 .accent{ color:var(--gold); }
+  .hero-sub{
+    margin:22px auto 0; max-width:520px;
+    color:var(--text-dim); font-size:17px; line-height:1.65;
+  }
+  .hero-ctas{ margin-top:34px; display:flex; flex-direction:column; gap:14px; align-items:center; }
+  .hero-ctas .btn{ width:100%; max-width:360px; }
+  .hero-trust{
+    margin-top:28px; display:flex; align-items:center; justify-content:center; gap:10px;
+    color:var(--text-faint); font-size:13.5px; font-weight:600;
+  }
+  .hero-trust .stars{ color:var(--gold); letter-spacing:2px; }
+
+  .hero-media{
+    position:relative; z-index:1;
+    max-width:420px; margin:0 auto;
+  }
+  .hero-photo-wrap{
+    position:relative;
+    border-radius:26px;
+    overflow:hidden;
+    aspect-ratio:3/4;
+  }
+  .hero-photo-wrap img{
+    width:100%; height:100%; object-fit:cover; object-position:50% 15%;
+    filter:grayscale(0.55) sepia(0.25) saturate(1.3) contrast(1.08) brightness(0.92);
+  }
+  .hero-photo-wrap::before{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,10,10,0) 40%, rgba(10,10,10,0.92) 100%),
+               linear-gradient(90deg, rgba(10,10,10,0.35), transparent 30%, transparent 70%, rgba(10,10,10,0.35));
+    z-index:2;
+  }
+  .hero-photo-wrap::after{
+    content:"";
+    position:absolute; inset:0;
+    box-shadow:inset 0 0 0 1px rgba(232,177,63,0.25), inset 0 0 60px rgba(0,0,0,0.5);
+    border-radius:26px;
+    z-index:3;
+  }
+  .hero-badge{
+    position:absolute; z-index:4; bottom:18px; left:18px; right:18px;
+    display:flex; align-items:center; gap:10px;
+    background:rgba(10,10,10,0.55);
+    border:1px solid rgba(232,177,63,0.3);
+    backdrop-filter:blur(8px);
+    border-radius:14px; padding:12px 14px;
+  }
+  .hero-badge i{ color:var(--gold); font-size:20px; }
+  .hero-badge span{ font-size:12.5px; font-weight:700; color:var(--text); line-height:1.3; }
+  .hero-badge b{ color:var(--gold); }
+
+  .hero-glow{
+    position:absolute; width:340px; height:340px; border-radius:50%;
+    background:radial-gradient(circle, rgba(232,177,63,0.35), transparent 70%);
+    filter:blur(30px); z-index:0; top:10%; right:-10%;
+    pointer-events:none;
+  }
+
+  @media(min-width:960px){
+    .hero{ padding:150px 0 0; }
+    .hero-grid{ grid-template-columns:1.05fr 0.95fr; gap:20px; }
+    .hero-content{ text-align:left; }
+    .hero-content .eyebrow{ justify-content:flex-start; }
+    .hero h1{ font-size:clamp(3rem, 4.6vw, 4.4rem); }
+    .hero-sub{ margin:22px 0 0; }
+    .hero-ctas{ flex-direction:row; align-items:center; }
+    .hero-ctas .btn{ width:auto; }
+    .hero-trust{ justify-content:flex-start; }
+    .hero-media{ max-width:460px; }
+  }
+
+  /* ticker */
+  .ticker{
+    position:relative; z-index:2;
+    margin-top:70px;
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+    background:var(--bg-alt);
+    overflow:hidden;
+    padding:14px 0;
+  }
+  .ticker-track{
+    display:flex; width:max-content;
+    animation:scroll-x 26s linear infinite;
+  }
+  .ticker-track span{
+    display:inline-flex; align-items:center;
+    font-family:var(--ff-display); font-size:15px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--text-faint); padding:0 26px; white-space:nowrap;
+  }
+  .ticker-track span i{ color:var(--gold); margin-right:26px; font-size:8px; }
+  @keyframes scroll-x{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+  /* ---------- Section shells ---------- */
+  section{ position:relative; padding:90px 0; }
+  .section-head{ max-width:640px; margin-bottom:52px; }
+  .section-head.center{ margin-left:auto; margin-right:auto; text-align:center; }
+  .section-head h2{
+    margin-top:16px;
+    font-size:clamp(1.9rem, 5.5vw, 2.7rem);
+    text-transform:uppercase; line-height:1.08;
+  }
+  .section-head p{ margin-top:16px; color:var(--text-dim); font-size:16px; line-height:1.7; }
+
+  /* ---------- About ---------- */
+  .about{ background:var(--bg-alt); }
+  .about-grid{ display:grid; grid-template-columns:1fr; gap:44px; align-items:center; }
+  .about-visual{ position:relative; justify-self:center; }
+  .about-ring{
+    width:220px; height:220px; border-radius:50%;
+    background:conic-gradient(from 220deg, var(--gold), transparent 30%, transparent 70%, var(--gold));
+    display:flex; align-items:center; justify-content:center;
+    padding:6px;
+  }
+  .about-ring-inner{
+    width:100%; height:100%; border-radius:50%;
+    background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--ff-display); font-size:3.6rem; color:var(--gold);
+  }
+  .about-body h2{ font-size:clamp(1.9rem,5vw,2.5rem); text-transform:uppercase; line-height:1.1; }
+  .about-body .lead{ margin-top:18px; font-size:17px; color:var(--text); line-height:1.75; }
+  .about-body .lead + .lead{ margin-top:14px; color:var(--text-dim); }
+  .about-signature{ margin-top:24px; font-family:var(--ff-script); font-size:2.1rem; color:var(--gold); }
+  .about-points{ margin-top:30px; display:grid; grid-template-columns:1fr; gap:14px; }
+  .about-point{ display:flex; gap:12px; align-items:flex-start; }
+  .about-point i{ color:var(--gold); margin-top:3px; font-size:16px; }
+  .about-point strong{ display:block; font-size:15px; }
+  .about-point span{ display:block; color:var(--text-dim); font-size:14px; margin-top:2px; }
+
+  @media(min-width:900px){
+    .about-grid{ grid-template-columns:0.85fr 1.15fr; gap:70px; }
+    .about-points{ grid-template-columns:1fr 1fr; }
+  }
+
+  /* ---------- Steps ---------- */
+  .steps-wrap{ position:relative; }
+  .steps{ display:grid; grid-template-columns:1fr; gap:0; }
+  .step{
+    position:relative; display:flex; gap:20px;
+    padding:0 0 44px 0;
+  }
+  .step:last-child{ padding-bottom:0; }
+  .step-marker{
+    position:relative; flex-shrink:0;
+    width:56px; height:56px; border-radius:50%;
+    background:var(--surface); border:1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--ff-display); font-size:20px; color:var(--gold);
+    z-index:2;
+  }
+  .step-line{
+    position:absolute; left:27px; top:56px; bottom:0; width:2px;
+    background:linear-gradient(var(--gold), transparent);
+    opacity:0.35;
+  }
+  .step:last-child .step-line{ display:none; }
+  .step-body{ padding-top:8px; }
+  .step-body .tag{ font-size:12px; letter-spacing:2px; text-transform:uppercase; color:var(--text-faint); font-weight:700; }
+  .step-body h3{ margin-top:6px; font-size:1.25rem; text-transform:uppercase; font-family:var(--ff-body); font-weight:800; letter-spacing:0.3px; }
+  .step-body p{ margin-top:8px; color:var(--text-dim); font-size:15px; line-height:1.65; max-width:460px; }
+  .step-icon{ color:var(--gold); margin-right:8px; }
+
+  @media(min-width:900px){
+    .steps{ grid-template-columns:repeat(4,1fr); gap:24px; }
+    .step{ flex-direction:column; padding:0; }
+    .step-line{ left:56px; top:27px; right:-24px; bottom:auto; width:auto; height:2px; }
+    .step-marker{ margin-bottom:20px; }
+  }
+
+  /* ---------- Benefits ---------- */
+  .benefits{ background:var(--bg-alt); }
+  .bento{ display:grid; grid-template-columns:1fr; gap:16px; }
+  .bento-card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:30px 26px; transition:transform .3s ease, border-color .3s ease, background .3s ease;
+  }
+  .bento-card:hover{ transform:translateY(-4px); border-color:rgba(232,177,63,0.4); background:var(--surface-2); }
+  .bento-card i{ font-size:26px; color:var(--gold); }
+  .bento-card h3{ margin-top:18px; font-family:var(--ff-body); font-weight:800; font-size:17px; text-transform:none; letter-spacing:0.2px; }
+  .bento-card p{ margin-top:10px; color:var(--text-dim); font-size:14.5px; line-height:1.6; }
+  .bento-featured{ background:linear-gradient(150deg, var(--surface-2), var(--surface)); border-color:rgba(232,177,63,0.35); }
+  .bento-featured h3{ font-size:20px; }
+
+  @media(min-width:700px){ .bento{ grid-template-columns:1fr 1fr; } }
+  @media(min-width:1000px){
+    .bento{ grid-template-columns:repeat(3,1fr); }
+    .bento-featured{ grid-column:span 2; }
+  }
+
+  /* ---------- Testimonials ---------- */
+  .testi-scroller{
+    display:flex; gap:20px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding:6px 6px 26px; margin:0 -6px;
+    -ms-overflow-style:none; scrollbar-width:none;
+  }
+  .testi-scroller::-webkit-scrollbar{ display:none; }
+  .testi-card{
+    scroll-snap-align:start; flex:0 0 88%;
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:30px 26px; display:flex; flex-direction:column;
+  }
+  .testi-stars{ color:var(--gold); font-size:14px; letter-spacing:3px; }
+  .testi-quote-icon{ color:var(--gold); opacity:0.35; font-size:30px; margin-bottom:6px; }
+  .testi-text{ font-size:15.5px; line-height:1.7; color:var(--text); flex:1; }
+  .testi-foot{ margin-top:22px; display:flex; align-items:center; gap:12px; }
+  .testi-avatar{
+    width:42px; height:42px; border-radius:50%;
+    background:linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--ff-display); color:#181000; font-size:16px;
+  }
+  .testi-name{ font-weight:800; font-size:14px; }
+  .testi-time{ color:var(--text-faint); font-size:12.5px; }
+
+  @media(min-width:760px){
+    .testi-scroller{ overflow-x:visible; display:grid; grid-template-columns:repeat(3,1fr); }
+    .testi-card{ flex:none; }
+  }
+
+  /* ---------- Stats ---------- */
+  .stats{
+    background:
+      radial-gradient(ellipse 700px 400px at 50% 0%, rgba(232,177,63,0.12), transparent 65%),
+      var(--bg);
+    border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+  }
+  .stats-grid{ display:grid; grid-template-columns:1fr 1fr; gap:34px 20px; text-align:center; }
+  .stat i{ font-size:24px; color:var(--gold); }
+  .stat-number{ margin-top:12px; font-family:var(--ff-display); font-size:clamp(2.1rem,6vw,2.8rem); color:var(--text); }
+  .stat-label{ margin-top:6px; font-size:13px; color:var(--text-dim); font-weight:600; letter-spacing:0.3px; }
+  @media(min-width:800px){ .stats-grid{ grid-template-columns:repeat(4,1fr); } }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    background:linear-gradient(135deg, #b9832a, #e8b13f 45%, #f4cd76);
+    color:#181000; text-align:center; overflow:hidden; position:relative;
+  }
+  .final-cta .container{ position:relative; z-index:2; }
+  .final-cta::before{
+    content:"";
+    position:absolute; inset:0;
+    background:radial-gradient(circle at 15% 20%, rgba(255,255,255,0.35), transparent 40%),
+               radial-gradient(circle at 85% 80%, rgba(0,0,0,0.12), transparent 45%);
+  }
+  .final-cta h2{ font-size:clamp(2.1rem,7vw,3.2rem); text-transform:uppercase; line-height:1.05; }
+  .final-cta p.lead{ max-width:520px; margin:20px auto 0; font-size:16.5px; font-weight:600; opacity:0.85; line-height:1.6; }
+  .final-cta .btn{ margin-top:34px; }
+  .final-cta .btn-primary{ background:#141210; color:var(--gold-bright); box-shadow:0 14px 34px -10px rgba(0,0,0,0.45); }
+  .final-cta .btn-primary:hover{ background:#0c0b09; }
+  .final-cta .phone{ margin-top:20px; font-weight:800; font-size:14.5px; letter-spacing:0.3px; opacity:0.8; }
+
+  /* ---------- Footer ---------- */
+  .footer{ background:#050505; padding:60px 0 30px; border-top:1px solid var(--border); }
+  .footer-grid{ display:grid; grid-template-columns:1fr; gap:36px; }
+  .footer-brand .logo{ margin-bottom:12px; }
+  .footer-brand p{ color:var(--text-faint); font-size:14px; max-width:320px; line-height:1.6; }
+  .footer-col h4{ font-size:13px; text-transform:uppercase; letter-spacing:1.5px; color:var(--text-dim); margin-bottom:16px; font-weight:800; }
+  .footer-links{ display:flex; flex-direction:column; gap:12px; }
+  .footer-links a{ color:var(--text-faint); font-size:14.5px; display:flex; align-items:center; gap:10px; transition:color .2s ease; }
+  .footer-links a:hover{ color:var(--gold); }
+  .footer-links i{ color:var(--gold); width:16px; }
+  .footer-bottom{
+    margin-top:46px; padding-top:24px; border-top:1px solid var(--border);
+    display:flex; flex-direction:column; gap:10px; align-items:center; text-align:center;
+    color:var(--text-faint); font-size:13px;
+  }
+  @media(min-width:800px){
+    .footer-grid{ grid-template-columns:1.4fr 1fr 1fr; }
+    .footer-bottom{ flex-direction:row; justify-content:space-between; text-align:left; }
+  }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .wa-float{
+    position:fixed; bottom:22px; right:22px; z-index:200;
+    width:60px; height:60px; border-radius:50%;
+    background:var(--wa); color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:28px; box-shadow:0 10px 26px -6px rgba(0,0,0,0.5);
+    transition:transform .25s ease;
+  }
+  .wa-float:hover{ transform:scale(1.08); }
+  .wa-float::before{
+    content:""; position:absolute; inset:0; border-radius:50%;
+    box-shadow:0 0 0 0 rgba(37,211,102,0.6);
+    animation:pulse-ring 2.2s cubic-bezier(.4,0,.6,1) infinite;
+  }
+  @keyframes pulse-ring{
+    0%{ box-shadow:0 0 0 0 rgba(37,211,102,0.55); }
+    70%{ box-shadow:0 0 0 16px rgba(37,211,102,0); }
+    100%{ box-shadow:0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+</head>
+<body>
+
+<a href="#hero" class="visually-hidden" style="position:absolute; left:-9999px;">Pular para o conteúdo principal</a>
+
+<header class="navbar" id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="logo"><span>VINICIUS</span><span class="dot">.</span><span>MASCAGNI</span></a>
+    <nav class="nav-links" aria-label="Navegação principal">
+      <a href="#sobre">Sobre</a>
+      <a href="#como-funciona">Como Funciona</a>
+      <a href="#beneficios">Benefícios</a>
+      <a href="#depoimentos">Depoimentos</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="https://wa.me/5517992080034?text=Olá%20Vinicius!%20Tenho%20interesse%20na%20consultoria%20online." target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Fale Comigo
+    </a>
+    <a class="nav-wa-icon" href="https://wa.me/5517992080034?text=Olá%20Vinicius!%20Tenho%20interesse%20na%20consultoria%20online." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero noise" id="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content reveal in-view">
+          <span class="eyebrow">Consultoria Online</span>
+          <h1>Transforme seu corpo com <span class="accent">acompanhamento profissional</span> 100% online</h1>
+          <p class="hero-sub">Treino e dieta feitos sob medida pra sua rotina, com ajustes constantes e suporte direto comigo pelo WhatsApp. Sem enrolação, sem sofrimento — só método e consistência.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://wa.me/5517992080034?text=Olá%20Vinicius!%20Tenho%20interesse%20na%20consultoria%20online." target="_blank" rel="noopener">
+              <i class="fa-brands fa-whatsapp"></i> Quero minha consultoria
+            </a>
+            <a class="btn btn-ghost" href="#depoimentos">Ver resultados de alunos</a>
+          </div>
+          <div class="hero-trust">
+            <span class="stars">★★★★★</span>
+            <span>Alunos reais, resultados reais</span>
+          </div>
+        </div>
+
+        <div class="hero-media reveal reveal-delay-2 in-view">
+          <div class="hero-photo-wrap">
+            <img src="img/vinicius-hero.png" alt="Vinicius Mascagni, personal trainer, exibindo físico definido" loading="lazy">
+            <div class="hero-badge">
+              <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+              <span>Metodologia própria <b>treino + dieta</b><br>focada em resultado real</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span><i class="fa-solid fa-circle"></i>DISCIPLINA</span>
+        <span><i class="fa-solid fa-circle"></i>FOCO</span>
+        <span><i class="fa-solid fa-circle"></i>CONSISTÊNCIA</span>
+        <span><i class="fa-solid fa-circle"></i>RESULTADO</span>
+        <span><i class="fa-solid fa-circle"></i>DISCIPLINA</span>
+        <span><i class="fa-solid fa-circle"></i>FOCO</span>
+        <span><i class="fa-solid fa-circle"></i>CONSISTÊNCIA</span>
+        <span><i class="fa-solid fa-circle"></i>RESULTADO</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="about" id="sobre">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="about-ring">
+            <div class="about-ring-inner">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+          </div>
+        </div>
+        <div class="about-body reveal reveal-delay-1">
+          <span class="eyebrow">Quem sou eu</span>
+          <h2>Personal trainer focado em resultado real, não em fórmula pronta</h2>
+          <p class="lead">Sou Vinicius Mascagni, personal trainer especializado em consultoria online de treino e dieta. Acompanho cada aluno de perto — do primeiro dia até a transformação que ele veio buscar.</p>
+          <p class="lead">Aqui não existe plano genérico. Cada treino e cada dieta são construídos em cima da sua rotina, dos seus horários e do seu objetivo, com ajustes constantes conforme seu corpo responde.</p>
+          <div class="about-signature">Vinicius Mascagni</div>
+          <div class="about-points">
+            <div class="about-point">
+              <i class="fa-solid fa-user-check"></i>
+              <div><strong>Acompanhamento personalizado</strong><span>Nada de treino padrão pra todo mundo</span></div>
+            </div>
+            <div class="about-point">
+              <i class="fa-solid fa-utensils"></i>
+              <div><strong>Treino + dieta integrados</strong><span>Duas frentes trabalhando juntas</span></div>
+            </div>
+            <div class="about-point">
+              <i class="fa-solid fa-chart-line"></i>
+              <div><strong>Foco em resultado real</strong><span>Evolução monitorada de perto</span></div>
+            </div>
+            <div class="about-point">
+              <i class="fa-solid fa-comments"></i>
+              <div><strong>Suporte humano de verdade</strong><span>Direto comigo, sem robô</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Consultoria Online</span>
+        <h2>Como funciona a consultoria</h2>
+        <p>Um processo simples, direto e pensado pra caber na sua rotina — do primeiro contato ao seu resultado.</p>
+      </div>
+
+      <div class="steps-wrap">
+        <div class="steps">
+          <div class="step reveal">
+            <div class="step-marker">01</div>
+            <div class="step-line" aria-hidden="true"></div>
+            <div class="step-body">
+              <span class="tag"><i class="fa-solid fa-clipboard-list step-icon"></i>Anamnese</span>
+              <h3>Avaliação inicial</h3>
+              <p>Entendo seu histórico, objetivos, rotina e limitações pra montar uma estratégia que faz sentido pra você.</p>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-1">
+            <div class="step-marker">02</div>
+            <div class="step-line" aria-hidden="true"></div>
+            <div class="step-body">
+              <span class="tag"><i class="fa-solid fa-clipboard-check step-icon"></i>Planejamento</span>
+              <h3>Plano personalizado</h3>
+              <p>Treino e dieta sob medida, pensados pro seu dia a dia, sem fórmulas genéricas de internet.</p>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-2">
+            <div class="step-marker">03</div>
+            <div class="step-line" aria-hidden="true"></div>
+            <div class="step-body">
+              <span class="tag"><i class="fa-solid fa-comments step-icon"></i>Suporte</span>
+              <h3>Acompanhamento contínuo</h3>
+              <p>Ajustes constantes no treino e na dieta, com suporte direto comigo pelo WhatsApp sempre que precisar.</p>
+            </div>
+          </div>
+          <div class="step reveal reveal-delay-3">
+            <div class="step-marker">04</div>
+            <div class="step-body">
+              <span class="tag"><i class="fa-solid fa-chart-line step-icon"></i>Evolução</span>
+              <h3>Resultados reais</h3>
+              <p>Sua evolução é monitorada de perto, com métricas e fotos, pra garantir que o plano está funcionando.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="benefits" id="beneficios">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Diferenciais</span>
+        <h2>Por que treinar comigo</h2>
+        <p>Consultoria pensada pra encaixar na vida real, não pra atrapalhar ela.</p>
+      </div>
+
+      <div class="bento">
+        <div class="bento-card bento-featured reveal">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h3>Treinos que se encaixam na sua rotina</h3>
+          <p>Sem desculpa pra faltar treino. O plano é montado em volta da sua agenda, dos seus horários e do equipamento que você tem disponível — em casa, na academia ou na rua.</p>
+        </div>
+        <div class="bento-card reveal reveal-delay-1">
+          <i class="fa-solid fa-apple-whole"></i>
+          <h3>Dieta sem sofrimento</h3>
+          <p>Nada de passar fome ou cortar tudo que você gosta. A dieta é ajustada pro seu estilo de vida real.</p>
+        </div>
+        <div class="bento-card reveal reveal-delay-2">
+          <i class="fa-solid fa-people-arrows"></i>
+          <h3>Acompanhamento próximo e humanizado</h3>
+          <p>Fala direto comigo, sem intermediário e sem robô. Suas dúvidas são respondidas por quem entende do assunto.</p>
+        </div>
+        <div class="bento-card reveal reveal-delay-3">
+          <i class="fa-solid fa-medal"></i>
+          <h3>Resultados comprovados por alunos reais</h3>
+          <p>Não é promessa vazia. Os resultados aparecem nos relatos de quem já treina comigo.</p>
+        </div>
+        <div class="bento-card reveal reveal-delay-4">
+          <i class="fa-solid fa-earth-americas"></i>
+          <h3>Treine de qualquer lugar</h3>
+          <p>100% online. Não importa a cidade, o país ou o fuso horário — o acompanhamento chega até você.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow">Depoimentos</span>
+        <h2>Quem treina comigo, comprova</h2>
+        <p>Relatos reais de alunos que estão vivendo a transformação na prática.</p>
+      </div>
+
+      <div class="testi-scroller">
+        <article class="testi-card reveal">
+          <i class="fa-solid fa-quote-left testi-quote-icon" aria-hidden="true"></i>
+          <div class="testi-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p class="testi-text">"Nos treinos de superiores está intenso, porém gosto de treinar superior. O negócio tá pra matar, mas amando os resultados! Percebi que meu braço está ficando mais homogêneo."</p>
+          <div class="testi-foot">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Aluno há 2 meses</div>
+              <div class="testi-time">Consultoria Online</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card reveal reveal-delay-1">
+          <i class="fa-solid fa-quote-left testi-quote-icon" aria-hidden="true"></i>
+          <div class="testi-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p class="testi-text">"Tô gostando bastante dos treinos, principalmente porque eles encaixaram muito bem com o meu dia a dia, já que tenho pouco tempo pra treinar. A dieta também me ajudou muito, consegui ganhar bastante massa e agora vamos secar. A melhor parte da dieta foi não sofrer pra comer ou deixar de comer."</p>
+          <div class="testi-foot">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Aluno há 4 meses</div>
+              <div class="testi-time">Consultoria Online</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card reveal reveal-delay-2">
+          <i class="fa-solid fa-quote-left testi-quote-icon" aria-hidden="true"></i>
+          <div class="testi-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p class="testi-text">"Gostaria de elogiar a excelente organização dos treinos e a qualidade da metodologia. Em cada sessão, consigo trabalhar o grupo muscular desejado de forma completa e com intensidade próxima ao meu limite. Saí dos 66kg para 78kg em poucos meses. Estou muito satisfeito com os resultados."</p>
+          <div class="testi-foot">
+            <div class="testi-avatar">A</div>
+            <div>
+              <div class="testi-name">Aluno há 6 meses</div>
+              <div class="testi-time">Consultoria Online</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUMEROS -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat reveal">
+          <i class="fa-solid fa-users"></i>
+          <div class="stat-number"><span class="count-up" data-target="80">0</span>+</div>
+          <div class="stat-label">Alunos transformados</div>
+        </div>
+        <div class="stat reveal reveal-delay-1">
+          <i class="fa-solid fa-weight-hanging"></i>
+          <div class="stat-number"><span class="count-up" data-target="500">0</span>kg+</div>
+          <div class="stat-label">De massa muscular ganha pelos alunos</div>
+        </div>
+        <div class="stat reveal reveal-delay-2">
+          <i class="fa-solid fa-globe"></i>
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Consultoria online</div>
+        </div>
+        <div class="stat reveal reveal-delay-3">
+          <i class="fa-solid fa-clock"></i>
+          <div class="stat-number">7 dias</div>
+          <div class="stat-label">De suporte por semana</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="reveal">Pronto para sua transformação?</h2>
+      <p class="lead reveal reveal-delay-1">As vagas de acompanhamento são limitadas todo mês pra garantir atenção de qualidade a cada aluno. Chama agora e garanta a sua.</p>
+      <a class="btn btn-primary reveal reveal-delay-2" href="https://wa.me/5517992080034?text=Olá%20Vinicius!%20Tenho%20interesse%20na%20consultoria%20online." target="_blank" rel="noopener">
+        <i class="fa-brands fa-whatsapp"></i> Falar com Vinicius agora
+      </a>
+      <p class="phone reveal reveal-delay-3">(17) 99208-0034</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo"><span>VINICIUS</span><span class="dot">.</span><span>MASCAGNI</span></div>
+        <p>Consultoria online de treino e dieta com acompanhamento próximo e foco em resultado real.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <div class="footer-links">
+          <a href="https://wa.me/5517992080034?text=Olá%20Vinicius!%20Tenho%20interesse%20na%20consultoria%20online." target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i>(17) 99208-0034</a>
+          <a href="https://instagram.com/vinicius.mascagni" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i>@vinicius.mascagni</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <div class="footer-links">
+          <a href="#sobre">Sobre</a>
+          <a href="#como-funciona">Como Funciona</a>
+          <a href="#depoimentos">Depoimentos</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Vinicius Mascagni. Todos os direitos reservados.</span>
+      <span>Consultoria Online de Treino e Dieta</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5517992080034?text=Olá%20Vinicius!%20Tenho%20interesse%20na%20consultoria%20online." target="_blank" rel="noopener" aria-label="Falar no WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+  // Navbar solid on scroll
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => {
+    if (window.scrollY > 40) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  };
+  document.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  // Count-up stats
+  const counters = document.querySelectorAll('.count-up');
+  const animateCount = (el) => {
+    const target = parseInt(el.dataset.target, 10);
+    const duration = 1400;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterObserver.observe(el));
+</script>
+
+</body>
+</html>
